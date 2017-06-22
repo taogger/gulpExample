@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/compass/total.css?v=feadc2ae4c" />
+	<script src="../dist/js/compass/all.js?v=527399f5f7"></script>
+</head>
+<body>
+	<form action="http://www.baidu.com">
+		姓名：<input type="text" id="username"><br>
+		描述：<textarea name="" id="des" cols="30" rows="10" placeholder="不多于50个字符"></textarea><span id="num"><em>0</em>/50</span>
+		<button type="submit" id="sub_btn">提交</button>
+	</form>
+	<script>
+	   function trim(str){
+	   	  return str.replace(/(^\s*)|(\s*$)/g,"");
+	   }
+	   var btn = document.getElementById('sub_btn');
+	   var ipt = document.getElementById('username');
+	   var des = document.getElementById('des');
+	   var desValue;
+	   btn.onclick = function(){
+	   	  desValue = document.getElementById('des').value;
+	   	  var trimvalue = trim(desValue);
+	   	  if(trimvalue == ""){
+	   	  	alert('不能为空');
+	   	  	des.value = des.value.replace(/(^\s*)|(\s*&)/g,"");
+	   	  	return false;	
+	   	  }
+	   	  // ipt.value = desValue;
+	   	  var ceshi = ipt.value;
+	   	  var ceshi2 = des.value;
+	   	  var d = new Date();
+	      d.setTime(d.getTime()+(10*24*60*60*1000));
+	      var time = d.toUTCString();
+	   	  // setcookie('你好',ceshi,10);
+	   	  // setcookie('age',ceshi2,10);
+	   	  document.cookie = "usename=zhangtao;expires=7;path=/";
+	   	  document.cookie = "age=26;expires="+ time +";path=/";
+	   	  // x=document.cookie;
+	   	  console.log(getcookie('age'));
+	   	  return false;
+
+	   }
+	   	  
+	   // function setcookie(cname,cvalue,exday){
+	   // 	  var d = new Date();
+	   // 	  d.setTime(d.getTime()+(exday*24*60*60*1000));
+	   // 	  var expires = "expires="+d.toGMTString();
+	   // 	  document.cookie = cname+"="+cvalue+";"+expires;
+	   // }
+	   function getcookie(cname){
+	   	  var name = cname + "=";
+	   	  var ca = document.cookie.split(';');
+	   	  for(var i=0;i<ca.length;i++){
+	   	  	var c = ca[i].trim();
+	   	  	if(c.indexOf(name)==0)return c.substring(name.length,c.length);
+	   	  }
+	   	  return "";
+	   }
+	   // function checkcookie(){
+	   // 		var user = getcookie('你好');
+	   // 		if(user!=""){
+	   // 			alert("welcome "+user);
+	   // 		}else{
+	   // 			user = prompt('please enter your name',"");
+	   // 			if(user!="" && user!=null){
+	   // 				setcookie("你好",user,10);
+	   // 			}
+	   // 		}
+	   // }
+	   // checkcookie();
+	</script>
+</body>
+</html>

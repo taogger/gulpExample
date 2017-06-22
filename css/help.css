@@ -1,0 +1,46 @@
+.sasstest:hover {
+  color: red;
+}
+
+h1 {
+  color: red;
+  font-size: 20px;
+}
+
+input {
+  background-color: #ff6600;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+h5 {
+  font-size: 14px;
+  color: orange;
+}
+
+h3 {
+  font-size: 22px;
+  color: red;
+}
+
+.liuyue1 {
+  color: orange;
+  background-color: #ddd;
+}
+
+@media screen and (max-width: 320px) {
+  html, body {
+    font-size: 75% !important;
+  }
+}
+@media screen and (min-width: 375px) {
+  html, body {
+    font-size: 81.25% !important;
+  }
+}
+@media screen and (min-width: 414px) {
+  html, body {
+    font-size: 87.5% !important;
+  }
+}

@@ -1,0 +1,1 @@
+var obj2={name:"xiaomao",say:function(o){console.log(this.name)}};document.getElementById("des").style.backgroundColor="#ccc";

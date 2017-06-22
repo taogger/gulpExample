@@ -1,0 +1,1 @@
+var obj1={name:"xiaowang",age:"30",eye:"blue",height:"172"},obj2={name:"xiaomao",say:function(e){console.log(this.name)}};document.getElementById("des").style.backgroundColor="#ccc";
